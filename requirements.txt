@@ -1,0 +1,35 @@
+# -----------------------------------------------------------------------
+# AI-Powered Sign Language Detection System
+# Python Dependencies - Version 0 (AI Service)
+# -----------------------------------------------------------------------
+# Install with:
+#   pip install -r requirements.txt
+# -----------------------------------------------------------------------
+
+# Core web framework for the AI microservice
+Flask==3.0.3
+
+# WSGI production server (used for deployment in later versions)
+gunicorn==22.0.0
+
+# Environment variable management
+python-dotenv==1.0.1
+
+# Computer vision library - used for frame capture/processing
+opencv-python==4.10.0.84
+
+# Google's hand/pose/face landmark detection library
+mediapipe==0.10.14
+
+# Numerical computing, required by OpenCV / MediaPipe / TensorFlow
+numpy==1.26.4
+
+# Deep learning framework - model training/inference (added in later versions)
+tensorflow==2.16.1
+
+langchain==0.3.27
+langchain-google-genai==2.1.9
+faiss-cpu==1.12.0
+pypdf==6.0.0
+google-generativeai==0.8.5
+python-dotenv==1.0.1
