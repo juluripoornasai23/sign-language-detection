@@ -10,13 +10,11 @@ This repository is being built incrementally across multiple versions. **Version
 
 The following features are planned for upcoming versions:
 
-- 🖐️ **Real-time Sign Detection** — Live webcam-based hand gesture recognition using MediaPipe + TensorFlow
-- 📝 **Sentence Formation** — Combine sequential detected signs into coherent sentences
-- 🔊 **Text-to-Speech** — Convert recognized text into spoken audio output
-- 🔐 **User Authentication** — Secure login/signup with session/token management
-- 🕘 **History** — Store and review past detection sessions per user
-- 📊 **Dashboard** — Visual analytics of usage, accuracy, and detection history
-- 🌐 **Multiple Language Support** — Support for multiple sign languages and spoken/text output languages
+
+ Sign language recognition
+- AI-based analysis
+- RAG knowledge retrieval
+- Subtitle generation
 
 ## Tech Stack
 
@@ -36,36 +34,31 @@ The structure below represents the **target folder layout for the complete proje
 
 ```
 sign-language-detection/
+
 │
-├── ai-service/                  # Python Flask AI microservice
-│   ├── app.py                   # ✅ V0 - Flask entry point
-│   ├── requirements.txt         # ✅ V0 - Python dependencies
-│   ├── .env.example             # ✅ V0 - Environment variable template
-│   ├── models/                  # 🔜 Trained ML models (.h5 files)
-│   ├── utils/                   # 🔜 Landmark extraction, preprocessing helpers
-│   └── routes/                  # 🔜 Modular Flask blueprints
+├── app.py # Main application
+├── test_gemini.py # Gemini API testing
+├── test_rag.py # RAG pipeline testing
 │
-├── backend/                     # Node.js + Express REST API (future)
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── models/               # MongoDB schemas
-│   │   ├── routes/
-│   │   └── middleware/
-│   ├── package.json
-│   └── .env.example
+├── rag_model/
+│ ├── chat.py # AI chat response generation
+│ ├── embedder.py # Text embedding generation
+│ ├── retriever.py # Document retrieval
+│ ├── rag_pipelines.py # Complete RAG workflow
+│ └── knowledge_loader.py # Knowledge document processing
 │
-├── frontend/                    # React.js client application (future)
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/             # API call helpers
-│   │   └── App.jsx
-│   └── package.json
+├── knowledge/
+│ ├── asl.md # American Sign Language information
+│ ├── isl.md # Indian Sign Language information
+│ └── common_signs.md # Common sign descriptions
 │
-├── docs/                         # Project documentation, diagrams
-├── .gitignore
-├── README.md                     # ✅ V0 - Project documentation
-└── LICENSE
+├── models/
+│ └── .gitkeep # Future ML models storage
+│
+├── requirements.txt # Required Python packages
+├── .env.example # Environment variable example
+├── README.md # Project documentation
+└── image.png
 ```
 
 > **Note:** In this Version 0 release, `app.py`, `requirements.txt`, `.env.example`, and `README.md` are provided at the project root for simplicity. They will be relocated into `ai-service/` once the backend and frontend are introduced in later versions.
